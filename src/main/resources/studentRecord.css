@@ -1,0 +1,91 @@
+.main-anchor{
+-fx-padding: 10px;
+}
+.header-text
+{
+
+}
+
+#sideBar{
+  -fx-background-color: linear-gradient(to bottom, #5AB7C3, #344A96);
+}
+#navPane{
+-fx-background-color: rgb(205,133,63);
+}
+#textSide{
+-fx-text-fill: rgb(245,245,245);
+}
+
+#imagePane{
+ -fx-background-radius: 75; /* Half of width/height for circle effect */
+ -fx-border-radius: 75;
+}
+#imageview{
+ -fx-background-radius: 75; /* Half of width/height for circle effect */
+ -fx-border-radius: 75;
+}
+#formIn{
+-fx-pref-width: 650;
+-fx-border: solid red 2px;
+-fx-background-image: url("/images/Aptech.png");
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+}
+
+#profilePane{
+-fx-background-image: url("/images/Aptech.png");
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+-fx-background-radius: 80;
+
+}
+
+#signOutForm{
+-fx-pref-width: 400;
+-fx-background-image: url("/images/Aptech.png");
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+}
+#nameField, #lastName, #studentId, #courseField, #lecturerField, #courseModule, #arrivalField, #genderField, #laptopBrand, #dateField, #studentIdOut, #departureField, #dateOut{
+-fx-pref-width: 300;
+}
+
+#signIn, #signOut, #viewTable{
+-fx-background-color: #8ecae6;
+}
+
+#logoPane{
+-fx-background-image: url("/images/Aptech.png");
+-fx-background-size: cover;
+-fx-background-position: center;
+}
+
+#recordButton, #courseButton, #gradeButton, #analyticsButton{
+-fx-text-fill: rgb(245,245,245);
+-fx-background-color: transparent;
+-fx-alignment: CENTER_LEFT;
+}
+#button2, #clockOut{
+-fx-text-fill: white;
+-fx-background-color:#8ecae6;
+}
+
+#RecordTable .column-header-background{
+   -fx-background-color: black;
+   -fc-border-radius: 8px 8px 0px 0px;
+   -fx-background-inset: 0 0 0 0;
+}
+
+#RecordTable .column-header, .filter {
+    -fx-background-color: transparent;
+    -fx-size: 40px;
+}
+
+#RecordTable .column-header .label {
+     -fx-text-fill: #fff;
+     -fx-font-family: "Arial";
+}
+
+#course1, #course2, #course3{
+fx-background-color: rgb(240, 230, 140);
+}
