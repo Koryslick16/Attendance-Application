@@ -141,19 +141,7 @@ public class SystemImpl implements Initializable {
         genderField.setItems(FXCollections.observableArrayList("Male", "Female"));
         laptopBrand.setItems(FXCollections.observableArrayList("HP", "Dell", "Apple", "Lenovo", "Asus", "Acer", "SamSung", "MicroSoft", "Toshiba"));
         courseField.setItems(FXCollections.observableArrayList("ADSE", "ACCP", "AI and Data Science", "AMSC", "ADM", "Cyber Security", "Short Term Course"));
-        courseModule.setItems(FXCollections.observableArrayList("HTML", "CSS", "JavaScript", "Python", "TypeScript", "Java", "MongoDB", "" + "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
-                "" +
+        courseModule.setItems(FXCollections.observableArrayList("HTML", "CSS", "JavaScript", "Python", "TypeScript", "Java", "MongoDB", "SQL", "PPT", "ReactJS", "" + "" + "" + "SpringBoot" + "" + "" + "" + "" + "" + "Dart" + "" +
                 "" +
                 "" +
                 ""));
@@ -176,7 +164,7 @@ public class SystemImpl implements Initializable {
     @FXML
     private void handleSignIn(ActionEvent actionEvent){
         try{
-            if (nameField.getText().isEmpty() || lastName.getText().isEmpty() || studentId.getText().isEmpty() || courseField.getValue().isEmpty() || genderField.getValue().isEmpty() || lecturerField.getText().isEmpty() || courseModule.getText().isEmpty() || laptopBrand.getValue().isEmpty() || arrivalField.getText().isEmpty() || dateField.getValue() == null){
+            if (nameField.getText().isEmpty() || lastName.getText().isEmpty() || studentId.getText().isEmpty() || courseField.getValue().isEmpty() || genderField.getValue().isEmpty() || courseModule.getValue().isEmpty() || lecturerField.getText().isEmpty() || laptopBrand.getValue().isEmpty() || arrivalField.getText().isEmpty() || dateField.getValue() == null){
                 showAlert("Input Error", "Fields cannot be empty");
                 return;
             }
@@ -188,7 +176,7 @@ public class SystemImpl implements Initializable {
 //            Parse arrival time
             LocalTime arrivalTime = parseTime(arrivalField.getText(), "Arrival Time");
 //            Create new student object and add to the database
-            Student student = new Student(nameField.getText(), lastName.getText(), stuId, genderField.getValue(), courseField.getValue(), lecturerField.getText(), courseModule.getText(), laptopBrand.getValue(), arrivalTime);
+            Student student = new Student(nameField.getText(), lastName.getText(), stuId, genderField.getValue(), courseField.getValue(), lecturerField.getText(), courseModule.getValue(), laptopBrand.getValue(), arrivalTime);
             records.addNewStudent(student);  // Insert new student record
             activeStudents.put(stuId, student); // Track the student as signed-in
             setupTableColumns();
@@ -267,7 +255,7 @@ public class SystemImpl implements Initializable {
         courseField.getSelectionModel().clearSelection();
         genderField.getSelectionModel().clearSelection();
         lecturerField.clear();
-        courseModule.clear();
+        courseModule.getSelectionModel().clearSelection();
         laptopBrand.getSelectionModel().clearSelection();
         arrivalField.clear();
         departureField.clear();
